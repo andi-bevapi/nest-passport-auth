@@ -12,6 +12,10 @@ export class JwtStrategy extends PassportStrategy(Strategy,'jwt') {
     });
   }
 
+  //per strategjine jwt Passport si fillim verifikon signiture e JWT dhe dekodon JWT
+  //pastaj therret metoden validate dhe i kalon token te dekoduar.
+  
+
   async validate(payload: any) {
     console.log("payload------");
     return { userId: payload.sub, username: payload.username };
